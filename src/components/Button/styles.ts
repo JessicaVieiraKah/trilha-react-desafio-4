@@ -1,17 +1,27 @@
 import styled from 'styled-components';
 
+export const Container = styled.div`
+    width: 100%;    
+`;
 
-export const ButtonContainer = styled.button`
-    width: 100%;
-    height: 42px;
-    background-color: #81259D;
-    color: #FFF;
 
-    border: 1px solid #81259D;
-    border-radius: 21px;
+export const ButtonContainer = styled.button<React.ButtonHTMLAttributes<HTMLButtonElement>>`
+  width: 100%;
+  height: 42px;
+  background-color: #81259D;
+  color: #FFF;
+  border: 1px solid #81259D;
+  border-radius: 21px;
 
-    &:hover {
-        opacity: 0.6;
-        cursor:pointer;
-    }
-`
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+
+  &:disabled {
+    background-color: #cccccc;
+    border: 1px solid #cccccc;
+    cursor: not-allowed;
+  }
+` as React.ComponentPropsWithRef<'button'>;
+
